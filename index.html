@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Quiet Space</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="app-container" class="app-container">
+        <div class="content-wrapper">
+            <div class="main-content-area">
+                <header>
+                    <h1>A Quiet Space</h1>
+                    <p>This space is just for you. A quiet place when the world is too loud.</p>
+                </header>
+
+                <div id="feature-display-area" class="feature-display-area">
+                    <div id="initial-message" class="initial-message">
+                        Choose an activity or an environment to find your peace
+                    </div>
+
+                    <div id="breathing-feature" class="breathing-animation hidden">
+                        <div class="breathing-circle-container">
+                             <div id="breathing-circle"></div>
+                        </div>
+                        <p id="breathing-instructions">Find your rhythm</p>
+                    </div>
+
+                    <div id="kind-words-feature" class="kind-words-display hidden">
+                        <div class="quote-display-wrapper">
+                            <p id="kind-word-text"></p>
+                        </div>
+                        <button id="another-word-btn" class="feature-btn">
+                            <svg class="refresh-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M3 12a9 9 0 0 1 9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M3 21v-5h5"/></svg>
+                            <span>Another word</span>
+                        </button>
+                    </div>
+
+                    <div id="environment-instructions" class="environment-instructions hidden">
+                        <p id="environment-text"></p>
+                    </div>
+                </div>
+
+                <div class="action-buttons-wrapper">
+                    <div class="action-buttons">
+                        <button id="breathe-btn" class="feature-btn lg" data-feature="breathing">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10Z"/><path d="M16 12a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z"/></svg>
+                            <span>Breathe</span>
+                        </button>
+                        <button id="words-btn" class="feature-btn lg" data-feature="words">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+                            <span>Read a kind word</span>
+                        </button>
+                    </div>
+
+                    <div class="environment-selection">
+                        <p class="env-selection-label">Choose your peaceful environment</p>
+                        <div class="action-buttons">
+                            <button id="sky-btn" class="feature-btn" data-environment="sky">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+                                <span>Night Sky</span>
+                            </button>
+                             <button id="mountains-btn" class="feature-btn" data-environment="mountains">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg>
+                                <span>Mountains</span>
+                            </button>
+                            <button id="beach-btn" class="feature-btn" data-environment="beach">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12c.83-.3 1.5-.67 2.33-1S6.5 10.33 7.33 10c.83-.33 1.5-.67 2.34-1 .83-.33 1.5-.67 2.33-1"/><path d="M21 12c-.83-.3-1.5-.67-2.33-1s-1.5-.33-2.34-1c-.83-.33-1.5-.67-2.33-1s-1.5-.67-2.33-1"/><path d="M3 6c.83-.3 1.5-.67 2.33-1S6.5 4.33 7.33 4c.83-.33 1.5-.67 2.34-1 .83-.33 1.5-.67 2.33-1"/><path d="M21 6c-.83-.3-1.5-.67-2.33-1s-1.5-.33-2.34-1c-.83-.33-1.5-.67-2.33-1s-1.5-.67-2.33-1"/><path d="M3 18c.83-.3 1.5-.67 2.33-1S6.5 16.33 7.33 16c.83-.33 1.5-.67 2.34-1 .83-.33 1.5-.67 2.33-1"/><path d="M21 18c-.83-.3-1.5-.67-2.33-1s-1.5-.33-2.34-1c-.83-.33-1.5-.67-2.33-1s-1.5-.67-2.33-1"/></svg>
+                                <span>Beach</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="wish-prompt" class="wish-modal-wrapper hidden">
+        <div class="wish-modal-content">
+            <div class="wish-icon">🌟</div>
+            <h3>Make a Wish!</h3>
+            <p>A shooting star just passed by</p>
+            <div class="wish-input-group">
+                <input type="text" id="wish-input" placeholder="What do you wish for?">
+                <button id="make-wish-btn">Make Wish ✨</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="wish-confirmation" class="wish-modal-wrapper hidden">
+        <div class="wish-modal-content">
+            <div class="wish-icon large">✨</div>
+            <p class="large-text">Your wish has been sent to the stars</p>
+            <p>May it find its way to you</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
